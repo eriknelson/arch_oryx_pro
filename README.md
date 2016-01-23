@@ -177,18 +177,30 @@ gpasswd -a $MY_USER bumblebee # Add main user to bumblebee group
 **Install newest kernel and display drivers**
 
 After much experimentation, I've found this to be the only way to consistently
-boot. Again, do so at your own risk, and you should understand the implications
-of running experimental software, particularly those like a bleeding edge kernel
-and display drivers.
+boot. Again, do so at your own risk. To quote the wiki:
 
-1) Uncomment `testing` and `community-testing` repos in `/etc/pacman.conf` to gain
-   access to pre-release packages. Sync repos: `pacman -Syy`
+> WARNING: Be careful when enabling the testing repository. Your system may break
+  after performing an update. Only experienced users who know how to deal with potential
+  system breakage should use it.
 
-2) `pacman -S nvidia` This installs bleeding edge, proprietary video drivers. It will
-   also install the pre-release 4.4 kernel. *This is absolutely critical.*
+> NOTE: testing is not for the "newest of the new" package versions. Part of its purpose
+  is to hold package updates that have the potential to break the system,
+  either by being part of the core set of packages, or by being critical in other ways.
+  As such, users of testing are strongly encouraged to subscribe to the
+  [arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public)
+  mailing list, watch the [testing repository forum](https://bbs.archlinux.org/viewforum.php?id=49),
+  and to [report all bugs](https://wiki.archlinux.org/index.php/Reporting_bug_guidelines).
 
-3) Disable testing repos by re-commenting `testing` and `community-testing` and
-   running a sync: `pacman -Syy`
+1) Enable testing repos. Uncomment `testing` and `community-testing`
+   in `/etc/pacman.conf`.
+
+2) Sync repos and upgrade: `pacman -Syyu`. This is important because
+   [Arch Linux does not support parial upgrades](https://wiki.archlinux.org/index.php/System_maintenance#Partial_upgrades_are_unsupported).
+   You should not cherry pick packages from testing, it's all or nothing.
+   We're not in kansas anymore!
+
+3) Install the latest nvidia proprietary drivers: `pacman -S nvidia`. The previous
+   upgrade should have pulled in linux 4.4. If not, nvidia will as a dependency.
 
 **Enable early KMS**
 
