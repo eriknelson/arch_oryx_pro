@@ -2,7 +2,7 @@
 
 Arch linux installation instructions for a System76 Onyx Pro.
 
-**DISCLAIMER: This tutorial requires pre-release software out of the testing
+**DISCLAIMER:** This tutorial requires pre-release software out of the testing
 repos in order to work. You should be aware that going forwards, you will
 likely need to manually manage your installation setup to return to a standard,
 non-testing environment. Also, this is Arch Linux and things move fast. If you
@@ -156,12 +156,12 @@ in the grub config.
   BIOS settings via advanced chipset settings. Hold F7 > advanced chipset settings >
   switch from DISCRETE to MSHYBRID. Do not do so yet, since the arch iso will not
   boot with this switched on. (More specifically, it will boot, but you will be
-  greeted with a blank screen.
+  greeted with a blank screen.)
 
 Install packages and setup:
 
 ```
-pacman -S bumblebee bbswitch mesa xf86-video-intel nvidia xorg-server
+pacman -S bumblebee mesa xf86-video-intel nvidia xorg-server
 systemctl enable bumblebeed # Enable the bumblebee daemon
 gpasswd -a $MY_USER bumblebee # Add main user to bumblebee group
 ```
@@ -178,7 +178,7 @@ gpasswd -a $MY_USER bumblebee # Add main user to bumblebee group
 
 After much experimentation, I've found this to be the only way to consistently
 boot. Again, do so at your own risk, and you should understand the implications
-of running experimental softare, particularly those like a bleeding edge kernel
+of running experimental software, particularly those like a bleeding edge kernel
 and display drivers.
 
 1) Uncomment `testing` and `community-testing` repos in `/etc/pacman.conf` to gain
@@ -225,6 +225,11 @@ bumblebee is happy:
 lspci | grep VGA
 journalctl -u bumblebeed
 ```
+
+Launch your DE via preferred method. Optionally verify bumblebee is running
+correctly:
+
+`pacman -S mesa-demos && optirun glxgears -info`
 
 #### Known issues and remarks
 
