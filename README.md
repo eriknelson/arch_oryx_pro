@@ -1,6 +1,6 @@
-# System76 Onyx Pro + Arch Linux
+# System76 Oryx Pro + Arch Linux
 
-Arch linux installation instructions for a System76 Onyx Pro.
+Arch linux installation instructions for a System76 OryxPro.
 
 **DISCLAIMER:** This tutorial requires pre-release software out of the testing
 repos in order to work. You should be aware that going forwards, you will
@@ -140,9 +140,9 @@ Enable passwordless sudo if preferred: `visudo`
 
 #### Display Setup
 
-This is the difficult part of getting Arch to run on an Onyx Pro.
+This is the difficult part of getting Arch to run on an Oryx pro.
 
-The Onyx Pro is an Nvidia Optimus enabled laptop. To leverage this, we're going
+The Oryx Pro is an Nvidia Optimus enabled laptop. To leverage this, we're going
 to use Bumblebee, an effort to get Optimus to run correctly on Linux.
 It uses Intel graphics unless specified to use the discrete graphics via `optirun`.
 
@@ -151,7 +151,7 @@ reasons. The proprietary drivers tend to run a little faster. It is also possibl
 to use nouveau with bumblebee, in which case, obviously do not blacklist it
 in the grub config.
 
-> IMPORTANT: The Onyx Pro ships with it's hybird graphics chipset configured for
+> IMPORTANT: The Oryx Pro ships with it's hybird graphics chipset configured for
   discrete graphics, NOT hybird graphics. Hybrid graphics can be switch on in the
   BIOS settings via advanced chipset settings. Hold F7 > advanced chipset settings >
   switch from DISCRETE to MSHYBRID. Do not do so yet, since the arch iso will not
