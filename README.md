@@ -2,12 +2,18 @@
 
 Arch linux installation instructions for a System76 OryxPro.
 
-**DISCLAIMER:** This tutorial requires pre-release software out of the testing
-repos in order to work. You should be aware that going forwards, you will
+**DISCLAIMER:** ~~This tutorial requires pre-release software out of the testing
+repos in order to work.~~* You should be aware that going forwards, you will
 likely need to manually manage your installation setup to return to a standard,
 non-testing environment. Also, this is Arch Linux and things move fast. If you
 find something to be inaccurate or incorrect here, please file an issue. I would
 like to know!
+
+**\* UPDATE (1/17/2016)**: Obviously Arch has moved forwards since this was originally
+written. My Oryx model is a late 2015/early 2016, and there have been some hardware
+revisions since then. I expect some of this tutorial may be out of date, but much
+of it probably still holds true. Happy to accept update PRs; it's great to see
+an uptick of Oryx owners looking to run Arch :)
 
 #### Partition and format drives
 
