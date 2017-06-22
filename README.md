@@ -9,7 +9,7 @@ non-testing environment. Also, this is Arch Linux and things move fast. If you
 find something to be inaccurate or incorrect here, please file an issue. I would
 like to know!
 
-**\* UPDATE (1/17/2016)**: Obviously Arch has moved forwards since this was originally
+**\* UPDATE (1/17/2017)**: Obviously Arch has moved forwards since this was originally
 written. My Oryx model is a late 2015/early 2016, and there have been some hardware
 revisions since then. I expect some of this tutorial may be out of date, but much
 of it probably still holds true. Happy to accept update PRs; it's great to see
